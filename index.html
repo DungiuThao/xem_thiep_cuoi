@@ -490,6 +490,129 @@ footer{background:var(--red2);color:rgba(255,255,255,.75);
   text-align:center;padding:60px 20px;}
 .ft-q{font-family:var(--fh);font-size:clamp(18px,3.5vw,28px);font-style:italic;
   line-height:1.65;max-width:540px;margin:0 auto;color:var(--goldlt);}
+/* ════════════════════════════════
+   §11 NÚT QUAY LẠI (MỚI THÊM)
+════════════════════════════════ */
+.back-section{
+  background:var(--red2);
+  text-align:center;
+  padding:0 20px 72px;
+  position:relative;
+}
+.back-orn{
+  display:flex;align-items:center;gap:12px;
+  justify-content:center;margin-bottom:30px;padding-top:10px;
+}
+.back-orn::before,.back-orn::after{
+  content:'';flex:1;max-width:120px;height:1px;
+}
+.back-orn::before{background:linear-gradient(to right,transparent,var(--gold));}
+.back-orn::after{background:linear-gradient(to left,transparent,var(--gold));}
+.back-orn-center{display:flex;align-items:center;gap:6px;}
+.orn-dia-sm{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;}
+.orn-chi-sm{font-family:var(--fh);font-size:18px;color:var(--gold);line-height:1;padding:0 2px;}
+ 
+.back-eyebrow{
+  font-family:var(--fn);font-size:10px;font-weight:700;
+  letter-spacing:.5em;text-transform:uppercase;
+  color:rgba(201,169,110,.7);margin-bottom:16px;display:block;
+}
+ 
+/* Nút chính */
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:0;
+  position:relative;
+  text-decoration:none;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:0;
+  outline:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.back-btn-corners{position:relative;display:inline-block;}
+.back-btn-corners::before,.back-btn-corners::after{
+  content:'';position:absolute;
+  width:10px;height:10px;
+  border-color:var(--goldlt);border-style:solid;opacity:.7;
+  pointer-events:none;
+}
+.back-btn-corners::before{bottom:0;left:0;border-width:0 0 2px 2px;}
+.back-btn-corners::after{top:0;right:0;border-width:2px 2px 0 0;}
+ 
+.back-btn-inner{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  padding:18px 40px;
+  background:linear-gradient(135deg,rgba(201,169,110,.13),rgba(201,169,110,.05));
+  border:1.5px solid var(--gold);
+  position:relative;
+  transition:background .3s,transform .2s,box-shadow .3s;
+  animation:gentle-pulse 2.8s ease-in-out infinite;
+}
+.back-btn-inner::before,.back-btn-inner::after{
+  content:'';position:absolute;
+  width:10px;height:10px;
+  border-color:var(--goldlt);border-style:solid;opacity:.7;
+}
+.back-btn-inner::before{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+.back-btn-inner::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+ 
+.back-btn:hover .back-btn-inner{
+  background:linear-gradient(135deg,rgba(201,169,110,.22),rgba(201,169,110,.1));
+  transform:translateY(-2px);
+  box-shadow:0 12px 40px rgba(0,0,0,.35),0 0 0 1px rgba(201,169,110,.3);
+  animation:none;
+}
+.back-btn:active .back-btn-inner{transform:translateY(0);}
+ 
+@keyframes gentle-pulse{
+  0%,100%{box-shadow:0 6px 28px rgba(0,0,0,.3),0 0 0 0 rgba(201,169,110,.35);}
+  50%    {box-shadow:0 6px 28px rgba(0,0,0,.3),0 0 0 8px rgba(201,169,110,.0);}
+}
+ 
+.back-arrow{
+  display:flex;align-items:center;justify-content:center;
+  width:32px;height:32px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#e0ba7a,var(--gold));
+  flex-shrink:0;
+  transition:transform .3s;
+  box-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+.back-btn:hover .back-arrow{transform:translateX(-4px);}
+.back-arrow svg{
+  width:14px;height:14px;fill:none;
+  stroke:var(--red2);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+}
+ 
+.back-text-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:1px;}
+.back-label-sm{
+  font-family:var(--fn);font-size:10px;font-weight:700;
+  letter-spacing:.4em;text-transform:uppercase;
+  color:rgba(201,169,110,.7);line-height:1;
+}
+.back-name{
+  font-family:var(--fs);font-size:clamp(18px,4.5vw,24px);font-weight:600;
+  color:var(--white);line-height:1.2;
+  transition:color .2s;
+}
+.back-btn:hover .back-name{color:var(--goldlt);}
+ 
+.back-glow{
+  position:absolute;inset:-2px;
+  background:radial-gradient(ellipse at center,rgba(201,169,110,.08),transparent 70%);
+  opacity:0;transition:opacity .3s;pointer-events:none;
+}
+.back-btn:hover .back-glow{opacity:1;}
+ 
+.back-note{
+  margin-top:22px;
+  font-family:var(--fh);font-size:clamp(13px,2.8vw,15px);font-style:italic;
+  color:rgba(201,169,110,.6);letter-spacing:.04em;
+}
 
 /* ════════════════════════════════
    RESPONSIVE
